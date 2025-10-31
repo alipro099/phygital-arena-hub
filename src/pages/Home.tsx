@@ -1,7 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { BottomNav } from "@/components/BottomNav";
+import { SocialLinks } from "@/components/SocialLinks";
+import { PhygitalCenters } from "@/components/PhygitalCenters";
 
 const disciplines = [
   { id: "football", name: "Фиджитал футбол", icon: "⚽", color: "from-green-500/20 to-green-600/10" },
@@ -21,30 +22,42 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-gradient-to-b from-graphite to-background border-b border-border">
-        <div className="max-w-screen-xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Games of the Future
+      <div className="bg-gradient-to-b from-card via-background to-background border-b border-primary/20">
+        <div className="max-w-screen-xl mx-auto px-4 py-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-center text-primary mb-2 font-display tracking-wide">
+            ВСЕРОССИЙСКАЯ ФЕДЕРАЦИЯ
           </h1>
-          <p className="text-muted-foreground">Выберите дисциплину</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4 font-display tracking-wider">
+            ФИДЖИТАЛ СПОРТА
+          </h2>
+          <p className="text-muted-foreground text-center text-sm">Будущее спорта уже здесь</p>
         </div>
+      </div>
+
+      {/* Social Links & Centers */}
+      <div className="max-w-screen-xl mx-auto px-4 py-6 space-y-4">
+        <SocialLinks />
+        <PhygitalCenters />
       </div>
 
       {/* Disciplines Grid */}
       <div className="max-w-screen-xl mx-auto px-4 py-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4 font-display">
+          Дисциплины
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {disciplines.map((discipline) => (
             <Card
               key={discipline.id}
               onClick={() => navigate(`/discipline/${discipline.id}`)}
-              className="relative group cursor-pointer overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(169_100%_50%/0.3)]"
+              className="relative group cursor-pointer overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)]"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${discipline.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               <div className="relative p-6 flex flex-col items-center justify-center min-h-[140px]">
                 <span className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">
                   {discipline.icon}
                 </span>
-                <h3 className="text-sm font-semibold text-center text-foreground">
+                <h3 className="text-sm font-semibold text-center text-foreground font-display">
                   {discipline.name}
                 </h3>
               </div>

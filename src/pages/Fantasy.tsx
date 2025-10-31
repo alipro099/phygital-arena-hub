@@ -7,12 +7,12 @@ const Fantasy = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-gradient-to-b from-graphite to-background border-b border-border">
+      <div className="bg-gradient-to-b from-card to-background border-b border-border">
         <div className="max-w-screen-xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2 font-display">
             Фэнтези
           </h1>
-          <p className="text-muted-foreground">Собери команду мечты</p>
+          <p className="text-muted-foreground">Собери команду и зарабатывай очки за их результаты</p>
         </div>
       </div>
 
@@ -37,8 +37,8 @@ const Fantasy = () => {
         </div>
 
         {/* Team Selection */}
-        <Card className="p-6 border-border bg-card">
-          <h2 className="text-xl font-bold text-foreground mb-4">Моя команда</h2>
+          <Card className="p-6 border-border bg-card">
+          <h2 className="text-xl font-bold text-foreground mb-4 font-display">Моя команда</h2>
           <div className="space-y-3 mb-6">
             <div className="flex items-center justify-between p-3 bg-graphite rounded-lg">
               <div className="flex items-center gap-3">
@@ -50,12 +50,12 @@ const Fantasy = () => {
                   <p className="text-xs text-muted-foreground">Позиция: Нападающий</p>
                 </div>
               </div>
-              <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-background font-display">
                 Выбрать
               </Button>
             </div>
           </div>
-          <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button className="w-full bg-gradient-to-r from-primary to-secondary text-background hover:shadow-[0_0_30px_hsl(195_100%_50%/0.6)] font-display font-bold">
             Подтвердить состав
           </Button>
         </Card>

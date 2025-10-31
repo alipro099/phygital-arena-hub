@@ -8,53 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 220 60% 6%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 7%;
+    --card: 220 50% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 7%;
+    --popover: 220 50% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 169 100% 50%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 60% 6%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 84 100% 50%;
+    --secondary-foreground: 220 60% 6%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 40% 20%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 169 100% 50%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 60% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 169 100% 50%;
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 195 100% 50%;
 
     --radius: 0.75rem;
 
-    /* Phygital Brand Colors */
-    --neon-cyan: 169 100% 50%;
-    --graphite: 0 0% 7%;
-    --pure-black: 0 0% 0%;
-    --pure-white: 0 0% 100%;
+    /* Phygital Brand Colors - New Design */
+    --dark-blue: 220 60% 6%;
+    --neon-blue: 195 100% 50%;
+    --neon-green: 84 100% 50%;
+    --metallic-silver: 0 0% 75%;
+    --purple-deep: 264 100% 44%;
 
     /* Gradients */
-    --gradient-neon: linear-gradient(135deg, hsl(169 100% 50% / 0.2), hsl(169 100% 50% / 0.05));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 0%), hsl(0 0% 7%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 6%), hsl(264 100% 44%));
+    --gradient-neon-blue: linear-gradient(135deg, hsl(195 100% 50% / 0.2), hsl(195 100% 50% / 0.05));
+    --gradient-neon-green: linear-gradient(135deg, hsl(84 100% 50% / 0.2), hsl(84 100% 50% / 0.05));
+    --gradient-card: linear-gradient(135deg, hsl(220 50% 10%), hsl(264 100% 20%));
     
     /* Shadows and Glows */
-    --glow-neon: 0 0 20px hsl(169 100% 50% / 0.5), 0 0 40px hsl(169 100% 50% / 0.3);
-    --glow-neon-strong: 0 0 30px hsl(169 100% 50% / 0.7), 0 0 60px hsl(169 100% 50% / 0.5);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.5);
+    --glow-blue: 0 0 20px hsl(195 100% 50% / 0.6), 0 0 40px hsl(195 100% 50% / 0.4);
+    --glow-blue-strong: 0 0 30px hsl(195 100% 50% / 0.8), 0 0 60px hsl(195 100% 50% / 0.6);
+    --glow-green: 0 0 20px hsl(84 100% 50% / 0.6), 0 0 40px hsl(84 100% 50% / 0.4);
+    --glow-green-strong: 0 0 30px hsl(84 100% 50% / 0.8), 0 0 60px hsl(84 100% 50% / 0.6);
+    --shadow-card: 0 4px 30px hsl(220 60% 6% / 0.7);
 
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

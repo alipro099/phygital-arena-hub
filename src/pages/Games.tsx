@@ -1,29 +1,57 @@
+import { useState } from "react";
 import { BottomNav } from "@/components/BottomNav";
 import { Card } from "@/components/ui/card";
-import { Gamepad2, Coins } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Trophy, Coins } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const games = [
-  { id: 1, name: "Пенальти", discipline: "⚽ Футбол", coins: "50-200" },
-  { id: 2, name: "Бросок в кольцо", discipline: "🏀 Баскетбол", coins: "50-200" },
-  { id: 3, name: "Буллит", discipline: "🏒 Хоккей", coins: "50-200" },
-  { id: 4, name: "Мини-шутер", discipline: "🔫 Шутер", coins: "50-200" },
-  { id: 5, name: "Ритм-игра", discipline: "💃 Танцы", coins: "50-200" },
-  { id: 6, name: "Уклонение", discipline: "🏎 Гонки", coins: "50-200" },
-  { id: 7, name: "Тайминг-баттл", discipline: "🥊 Бои", coins: "50-200" },
-  { id: 8, name: "Захват точки", discipline: "⚔ MOBA", coins: "50-200" },
-  { id: 9, name: "Стратегия роботов", discipline: "🤖 Роботы", coins: "50-200" },
+  { 
+    id: 1, 
+    name: "Пенальти", 
+    description: "Забей гол в ворота! Выбери направление удара и попробуй обыграть вратаря.", 
+    icon: "⚽",
+    color: "from-green-500/20 to-green-600/10",
+    coins: "50-300"
+  },
+  { 
+    id: 2, 
+    name: "Тапалка", 
+    description: "Нажимай на логотип как можно быстрее и зарабатывай очки!", 
+    icon: "🎮",
+    color: "from-primary/20 to-primary/10",
+    coins: "10-200"
+  },
+  { 
+    id: 3, 
+    name: "Бросок в кольцо", 
+    description: "Попади мячом в баскетбольное кольцо! Время решает всё.", 
+    icon: "🏀",
+    color: "from-orange-500/20 to-orange-600/10",
+    coins: "50-250"
+  },
+  { 
+    id: 4, 
+    name: "Тайминг-баттл", 
+    description: "Соревнуйся с ботом! Нажимай быстрее, чтобы победить в поединке.", 
+    icon: "🥊",
+    color: "from-secondary/20 to-secondary/10",
+    coins: "100-500"
+  },
 ];
 
 const Games = () => {
+  const [selectedGame, setSelectedGame] = useState<typeof games[0] | null>(null);
+
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-gradient-to-b from-graphite to-background border-b border-border">
-        <div className="max-w-screen-xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Игры
+      <div className="bg-gradient-to-br from-card via-background to-card border-b border-primary/20">
+        <div className="max-w-screen-xl mx-auto px-4 py-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-3 font-display animate-glow-pulse-blue">
+            ВЫИГРАЙ МИЛЛИОН РУБЛЕЙ
           </h1>
-          <p className="text-muted-foreground">Играй и зарабатывай коины</p>
+          <p className="text-muted-foreground text-lg">Играй, зарабатывай коины и участвуй в розыгрыше призов</p>
         </div>
       </div>
 
@@ -32,25 +60,72 @@ const Games = () => {
           {games.map((game) => (
             <Card
               key={game.id}
-              className="p-6 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(169_100%_50%/0.3)] cursor-pointer group"
+              onClick={() => setSelectedGame(game)}
+              className="p-6 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {game.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{game.discipline}</p>
+              <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`} />
+              <div className="relative">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors font-display">
+                      {game.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-3">{game.description}</p>
+                  </div>
+                  <span className="text-5xl group-hover:scale-110 transition-transform ml-3">
+                    {game.icon}
+                  </span>
                 </div>
-                <Gamepad2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-              </div>
-              <div className="flex items-center gap-2 text-primary">
-                <Coins className="w-4 h-4" />
-                <span className="text-sm font-semibold">{game.coins} коинов</span>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-secondary">
+                    <Coins className="w-5 h-5" />
+                    <span className="text-sm font-semibold font-display">{game.coins} коинов</span>
+                  </div>
+                  <Button 
+                    size="sm" 
+                    className="bg-gradient-to-r from-primary to-secondary text-background font-display font-bold"
+                  >
+                    Играть
+                  </Button>
+                </div>
               </div>
             </Card>
           ))}
         </div>
+
+        {/* Prize Info */}
+        <Card className="mt-6 p-6 border-primary/30 bg-gradient-to-br from-card to-background shadow-[0_0_30px_hsl(84_100%_50%/0.2)]">
+          <div className="flex items-center gap-4">
+            <Trophy className="w-12 h-12 text-secondary animate-glow-pulse-green" />
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-foreground mb-1 font-display">Главный приз</h3>
+              <p className="text-muted-foreground">Набирай коины и участвуй в ежемесячном розыгрыше миллиона рублей!</p>
+            </div>
+          </div>
+        </Card>
       </div>
+
+      {/* Game Details Dialog */}
+      <Dialog open={!!selectedGame} onOpenChange={() => setSelectedGame(null)}>
+        <DialogContent className="bg-card border-primary/30">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display font-bold text-primary flex items-center gap-3">
+              <span className="text-4xl">{selectedGame?.icon}</span>
+              {selectedGame?.name}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 mt-4">
+            <p className="text-muted-foreground">{selectedGame?.description}</p>
+            <div className="flex items-center gap-2 text-secondary text-lg">
+              <Coins className="w-6 h-6" />
+              <span className="font-semibold font-display">{selectedGame?.coins} коинов</span>
+            </div>
+            <Button className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6">
+              Начать игру
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <BottomNav />
     </div>
