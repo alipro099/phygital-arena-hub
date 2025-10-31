@@ -20,38 +20,38 @@ export const PhygitalCenters = () => {
           Фиджитал-центры
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-card border-primary/30">
+      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto bg-card border-primary/30 p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-display font-bold text-primary">
+          <DialogTitle className="text-xl sm:text-2xl font-display font-bold text-primary">
             Фиджитал-центры России
           </DialogTitle>
         </DialogHeader>
         
-        <div className="space-y-6 mt-4">
-          <Card className="p-6 bg-gradient-to-br from-card to-background border-primary/20">
-            <h3 className="text-lg font-display font-bold text-secondary mb-3">
+        <div className="space-y-4 sm:space-y-6 mt-4">
+          <Card className="p-4 sm:p-6 bg-gradient-to-br from-card to-background border-primary/20">
+            <h3 className="text-base sm:text-lg font-display font-bold text-secondary mb-3">
               Уже открыты
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               В России уже открыты фиджитал-центры в нескольких городах, включая <span className="text-foreground font-semibold">Казань, Севастополь, Кемерово и Белгород</span>. 
               Также появились центры в <span className="text-foreground font-semibold">Санкт-Петербурге</span> (университетский) и <span className="text-foreground font-semibold">Кирове</span>. 
               Строительство и открытие центров продолжается во многих других регионах страны, таких как Республика Калмыкия, Ставропольский край, Пермский край и другие.
             </p>
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              <img src={centerKazan} alt="Фиджитал-центр Казань" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
-              <img src={centerVr} alt="Фиджитал-центр VR" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
-              <img src={centerGaming} alt="Фиджитал-центр Gaming" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <img src={centerKazan} alt="Фиджитал-центр Казань" className="rounded-lg w-full h-40 sm:h-32 object-cover border border-primary/20" />
+              <img src={centerVr} alt="Фиджитал-центр VR" className="rounded-lg w-full h-40 sm:h-32 object-cover border border-primary/20" />
+              <img src={centerGaming} alt="Фиджитал-центр Gaming" className="rounded-lg w-full h-40 sm:h-32 object-cover border border-primary/20" />
             </div>
           </Card>
 
-          <Card className="p-6 bg-gradient-to-br from-card to-background border-primary/20">
-            <h3 className="text-lg font-display font-bold text-secondary mb-3">
+          <Card className="p-4 sm:p-6 bg-gradient-to-br from-card to-background border-primary/20">
+            <h3 className="text-base sm:text-lg font-display font-bold text-secondary mb-3">
               Наши планы
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Мы планируем построить фиджитал-центры по всей России. Для создания центра в вашем регионе необходимо:
             </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
+            <ul className="list-disc list-inside text-sm sm:text-base text-muted-foreground space-y-2 mb-6">
               <li>Помещение площадью от 200 кв.м</li>
               <li>Высота потолков не менее 4 метров</li>
               <li>Техническая возможность установки оборудования</li>
@@ -59,7 +59,7 @@ export const PhygitalCenters = () => {
             </ul>
             
             <Button 
-              className="w-full bg-primary hover:bg-primary/90 text-background font-display font-bold"
+              className="w-full bg-primary hover:bg-primary/90 text-background font-display font-bold text-sm sm:text-base"
               onClick={() => window.open('https://phygitalsport.ru/phygital_centres/', '_blank')}
             >
               Подробнее о центрах
@@ -67,7 +67,7 @@ export const PhygitalCenters = () => {
           </Card>
 
           <Button 
-            className="w-full bg-gradient-to-r from-secondary to-primary text-background font-display font-bold text-lg py-6 hover:shadow-[0_0_30px_hsl(84_100%_50%/0.6)] transition-all duration-300"
+            className="w-full bg-gradient-to-r from-secondary to-primary text-background font-display font-bold text-base sm:text-lg py-5 sm:py-6 hover:shadow-[0_0_30px_hsl(84_100%_50%/0.6)] transition-all duration-300"
             onClick={() => window.open('https://t.me/myfuturesport', '_blank')}
           >
             Отправить заявку на постройку центра
