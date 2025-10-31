@@ -24,20 +24,11 @@ const Home = () => {
       {/* Header */}
       <div className="bg-gradient-to-b from-card via-background to-background border-b border-primary/20">
         <div className="max-w-screen-xl mx-auto px-4 py-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-center text-primary mb-2 font-display tracking-wide">
-            ВСЕРОССИЙСКАЯ ФЕДЕРАЦИЯ
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4 font-display tracking-wider">
+            ВСЕРОССИЙСКАЯ ФЕДЕРАЦИЯ ЦИФРОВОГО СПОРТА
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-4 font-display tracking-wider">
-            ФИДЖИТАЛ СПОРТА
-          </h2>
           <p className="text-muted-foreground text-center text-sm">Будущее спорта уже здесь</p>
         </div>
-      </div>
-
-      {/* Social Links & Centers */}
-      <div className="max-w-screen-xl mx-auto px-4 py-6 space-y-4">
-        <SocialLinks />
-        <PhygitalCenters />
       </div>
 
       {/* Disciplines Grid */}
@@ -64,6 +55,12 @@ const Home = () => {
             </Card>
           ))}
         </div>
+      </div>
+
+      {/* Social Links & Centers */}
+      <div className="max-w-screen-xl mx-auto px-4 py-6 space-y-4">
+        <SocialLinks />
+        <PhygitalCenters />
       </div>
 
       <BottomNav />

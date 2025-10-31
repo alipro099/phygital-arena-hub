@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BottomNav } from "@/components/BottomNav";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ const games = [
     description: "Забей гол в ворота! Выбери направление удара и попробуй обыграть вратаря.", 
     icon: "⚽",
     color: "from-green-500/20 to-green-600/10",
-    coins: "50-300"
+    coins: "50-300",
+    path: "/games/penalty"
   },
   { 
     id: 2, 
@@ -20,7 +22,8 @@ const games = [
     description: "Нажимай на логотип как можно быстрее и зарабатывай очки!", 
     icon: "🎮",
     color: "from-primary/20 to-primary/10",
-    coins: "10-200"
+    coins: "10-200",
+    path: "/games/clicker"
   },
   { 
     id: 3, 
@@ -28,7 +31,8 @@ const games = [
     description: "Попади мячом в баскетбольное кольцо! Время решает всё.", 
     icon: "🏀",
     color: "from-orange-500/20 to-orange-600/10",
-    coins: "50-250"
+    coins: "50-250",
+    path: "/games/basketball"
   },
   { 
     id: 4, 
@@ -36,11 +40,13 @@ const games = [
     description: "Соревнуйся с ботом! Нажимай быстрее, чтобы победить в поединке.", 
     icon: "🥊",
     color: "from-secondary/20 to-secondary/10",
-    coins: "100-500"
+    coins: "100-500",
+    path: "/games/timing-battle"
   },
 ];
 
 const Games = () => {
+  const navigate = useNavigate();
   const [selectedGame, setSelectedGame] = useState<typeof games[0] | null>(null);
 
   return (
@@ -84,6 +90,10 @@ const Games = () => {
                   <Button 
                     size="sm" 
                     className="bg-gradient-to-r from-primary to-secondary text-background font-display font-bold"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(game.path);
+                    }}
                   >
                     Играть
                   </Button>
@@ -120,7 +130,14 @@ const Games = () => {
               <Coins className="w-6 h-6" />
               <span className="font-semibold font-display">{selectedGame?.coins} коинов</span>
             </div>
-            <Button className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6">
+            <Button 
+              className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6"
+              onClick={() => {
+                if (selectedGame?.path) {
+                  navigate(selectedGame.path);
+                }
+              }}
+            >
               Начать игру
             </Button>
           </div>

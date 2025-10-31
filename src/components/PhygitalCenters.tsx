@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Card } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
+import centerKazan from "@/assets/center-kazan.jpg";
+import centerVr from "@/assets/center-vr.jpg";
+import centerGaming from "@/assets/center-gaming.jpg";
 
 export const PhygitalCenters = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +37,11 @@ export const PhygitalCenters = () => {
               Также появились центры в <span className="text-foreground font-semibold">Санкт-Петербурге</span> (университетский) и <span className="text-foreground font-semibold">Кирове</span>. 
               Строительство и открытие центров продолжается во многих других регионах страны, таких как Республика Калмыкия, Ставропольский край, Пермский край и другие.
             </p>
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              <img src={centerKazan} alt="Фиджитал-центр Казань" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
+              <img src={centerVr} alt="Фиджитал-центр VR" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
+              <img src={centerGaming} alt="Фиджитал-центр Gaming" className="rounded-lg w-full h-32 object-cover border border-primary/20" />
+            </div>
           </Card>
 
           <Card className="p-6 bg-gradient-to-br from-card to-background border-primary/20">

@@ -10,6 +10,10 @@ import Games from "./pages/Games";
 import Tasks from "./pages/Tasks";
 import Achievements from "./pages/Achievements";
 import NotFound from "./pages/NotFound";
+import Clicker from "./pages/games/Clicker";
+import Penalty from "./pages/games/Penalty";
+import Basketball from "./pages/games/Basketball";
+import TimingBattle from "./pages/games/TimingBattle";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/discipline/:id" element={<DisciplinePage />} />
           <Route path="/fantasy" element={<Fantasy />} />
           <Route path="/games" element={<Games />} />
+          <Route path="/games/clicker" element={<Clicker />} />
+          <Route path="/games/penalty" element={<Penalty />} />
+          <Route path="/games/basketball" element={<Basketball />} />
+          <Route path="/games/timing-battle" element={<TimingBattle />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/achievements" element={<Achievements />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
