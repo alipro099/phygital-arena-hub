@@ -72,7 +72,7 @@ const Achievements = () => {
         {achievements.map((achievement) => (
           <Card
             key={achievement.id}
-            className="p-5 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.3)] group"
+            className="relative p-5 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.3)] group"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`} />
             <div className="relative flex gap-4">
