@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BottomNav } from "@/components/BottomNav";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Coins } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const games = [
   { 
@@ -47,7 +45,6 @@ const games = [
 
 const Games = () => {
   const navigate = useNavigate();
-  const [selectedGame, setSelectedGame] = useState<typeof games[0] | null>(null);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -66,7 +63,7 @@ const Games = () => {
           {games.map((game) => (
             <Card
               key={game.id}
-              onClick={() => setSelectedGame(game)}
+              onClick={() => navigate(game.path)}
               className="p-6 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`} />
@@ -90,10 +87,6 @@ const Games = () => {
                   <Button 
                     size="sm" 
                     className="bg-gradient-to-r from-primary to-secondary text-background font-display font-bold"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(game.path);
-                    }}
                   >
                     Играть
                   </Button>
@@ -114,35 +107,6 @@ const Games = () => {
           </div>
         </Card>
       </div>
-
-      {/* Game Details Dialog */}
-      <Dialog open={!!selectedGame} onOpenChange={() => setSelectedGame(null)}>
-        <DialogContent className="bg-card border-primary/30">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-display font-bold text-primary flex items-center gap-3">
-              <span className="text-4xl">{selectedGame?.icon}</span>
-              {selectedGame?.name}
-            </DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4 mt-4">
-            <p className="text-muted-foreground">{selectedGame?.description}</p>
-            <div className="flex items-center gap-2 text-secondary text-lg">
-              <Coins className="w-6 h-6" />
-              <span className="font-semibold font-display">{selectedGame?.coins} коинов</span>
-            </div>
-            <Button 
-              className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6"
-              onClick={() => {
-                if (selectedGame?.path) {
-                  navigate(selectedGame.path);
-                }
-              }}
-            >
-              Начать игру
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
 
       <BottomNav />
     </div>

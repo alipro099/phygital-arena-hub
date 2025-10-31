@@ -70,8 +70,8 @@ const Penalty = () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
-        <Card className="p-8 bg-gradient-to-br from-card to-background border-primary/30">
+      <div className="flex-1 flex flex-col max-w-screen-xl mx-auto px-4 py-4 w-full">
+        <Card className="flex-1 flex flex-col p-4 sm:p-6 bg-gradient-to-br from-card to-background border-primary/30">
           <div className="flex items-center justify-center gap-8 mb-6">
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">

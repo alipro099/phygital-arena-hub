@@ -85,26 +85,22 @@ const TimingBattle = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background flex flex-col">
       <div className="bg-gradient-to-br from-card via-background to-card border-b border-primary/20">
-        <div className="max-w-screen-xl mx-auto px-4 py-6">
+        <div className="max-w-screen-xl mx-auto px-4 py-4">
           <Button 
             variant="ghost" 
             onClick={() => navigate("/games")}
-            className="mb-4 text-primary hover:text-primary/80"
+            className="text-primary hover:text-primary/80"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Назад
           </Button>
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2 font-display">
-            Тайминг-баттл
-          </h1>
-          <p className="text-muted-foreground">Нажимай быстрее бота и побеждай!</p>
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
-        <Card className="p-8 bg-gradient-to-br from-card to-background border-primary/30">
+      <div className="flex-1 flex flex-col max-w-screen-xl mx-auto px-4 py-4 w-full">
+        <Card className="flex-1 flex flex-col p-4 sm:p-6 bg-gradient-to-br from-card to-background border-primary/30">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Coins className="w-6 h-6 text-secondary" />
             <span className="text-2xl font-bold text-foreground font-display">
