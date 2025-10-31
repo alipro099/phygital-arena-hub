@@ -25,16 +25,13 @@ const Home = () => {
       {/* Header */}
       <div className="bg-gradient-to-b from-card via-background to-background border-b border-primary/20">
         <div className="max-w-screen-xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center">
             <img 
               src={phygitalGamesLogo} 
               alt="Phygital Games" 
               className="h-16 sm:h-20 w-auto object-contain"
             />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-primary font-display tracking-wider">
-            ВСЕРОССИЙСКАЯ ФЕДЕРАЦИЯ ЦИФРОВОГО СПОРТА
-          </h1>
         </div>
       </div>
 
