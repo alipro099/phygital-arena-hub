@@ -33,8 +33,8 @@ export const SocialLinks = () => {
           rel="noopener noreferrer"
           className="block"
         >
-          <Card className="p-4 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group">
-            <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+          <Card className="relative p-4 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group">
+            <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`} />
             <div className="relative flex flex-col items-center justify-center gap-2">
               {typeof social.icon === 'string' ? (
                 <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
