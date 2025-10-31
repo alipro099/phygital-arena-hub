@@ -64,7 +64,7 @@ const Games = () => {
             <Card
               key={game.id}
               onClick={() => navigate(game.path)}
-              className="p-6 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group"
+              className="relative p-6 border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(195_100%_50%/0.4)] cursor-pointer group"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`} />
               <div className="relative">
