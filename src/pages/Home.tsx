@@ -4,6 +4,9 @@ import { BottomNav } from "@/components/BottomNav";
 import { SocialLinks } from "@/components/SocialLinks";
 import { PhygitalCenters } from "@/components/PhygitalCenters";
 import phygitalGamesLogo from "@/assets/phygital-games-logo.png";
+import gamesFuture1 from "@/assets/games-future-1.png";
+import gamesFuture2 from "@/assets/games-future-2.png";
+import gamesFuture3 from "@/assets/games-future-3.png";
 
 const disciplines = [
   { id: "football", name: "Фиджитал футбол", icon: "⚽", color: "from-green-500/20 to-green-600/10" },
@@ -30,6 +33,32 @@ const Home = () => {
               src={phygitalGamesLogo} 
               alt="Phygital Games" 
               className="h-16 sm:h-20 w-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* About Section */}
+      <div className="max-w-screen-xl mx-auto px-4 py-8">
+        <div className="bg-card border border-border rounded-lg p-6 mb-6">
+          <p className="text-foreground leading-relaxed text-base sm:text-lg mb-6">
+            «Игры будущего» — это международный мультиспортивный турнир, основанный на концепции фиджитал (от англ. physical — физический и digital — цифровой), которая объединяет классический спорт и киберспорт. Участники соревнуются в дисциплинах, сочетающих реальные спортивные игры с их цифровыми аналогами, проверяя свои навыки как в физической, так и в виртуальной среде. Итоговый результат определяется суммированием очков из обоих этапов.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img 
+              src={gamesFuture1} 
+              alt="Киберспортивные соревнования" 
+              className="w-full h-auto rounded-lg object-cover"
+            />
+            <img 
+              src={gamesFuture2} 
+              alt="Фиджитал баскетбол" 
+              className="w-full h-auto rounded-lg object-cover"
+            />
+            <img 
+              src={gamesFuture3} 
+              alt="Участники Игр будущего" 
+              className="w-full h-auto rounded-lg object-cover"
             />
           </div>
         </div>
