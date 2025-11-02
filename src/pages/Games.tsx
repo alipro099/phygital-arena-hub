@@ -51,7 +51,7 @@ const Games = () => {
       {/* Header */}
       <div className="bg-gradient-to-br from-card via-background to-card border-b border-primary/20">
         <div className="max-w-screen-xl mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-3 font-display animate-glow-pulse-blue">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-3 font-display">
             ВЫИГРАЙ МИЛЛИОН РУБЛЕЙ
           </h1>
           <p className="text-muted-foreground text-lg">Играй, зарабатывай коины и участвуй в розыгрыше призов</p>

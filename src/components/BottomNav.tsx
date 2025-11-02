@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { icon: Home, label: "Дом", path: "/" },
-  { icon: Trophy, label: "Фэнтези", path: "/fantasy" },
-  { icon: Gamepad2, label: "Игры", path: "/games" },
   { icon: ListTodo, label: "Задания", path: "/tasks" },
+  { icon: Gamepad2, label: "Игры", path: "/games" },
   { icon: Award, label: "Достижения", path: "/achievements" },
+  { icon: Trophy, label: "Фэнтези", path: "/fantasy" },
 ];
 
 export const BottomNav = () => {

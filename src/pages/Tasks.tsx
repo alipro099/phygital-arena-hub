@@ -95,7 +95,7 @@ const Tasks = () => {
             <div>
               <p className="text-sm text-muted-foreground mb-1">Ваш баланс</p>
               <div className="flex items-center gap-2">
-                <Coins className="w-6 h-6 text-secondary animate-glow-pulse-green" />
+                <Coins className="w-6 h-6 text-secondary" />
                 <span className="text-3xl font-bold text-foreground font-display">1,450</span>
               </div>
             </div>
