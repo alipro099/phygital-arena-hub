@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { BottomNav } from "@/components/BottomNav";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Trophy, Coins } from "lucide-react";
+import { Trophy, Coins, Banknote } from "lucide-react";
 
 const games = [
   { 
@@ -51,9 +51,15 @@ const Games = () => {
       {/* Header */}
       <div className="bg-gradient-to-br from-card via-background to-card border-b border-primary/20">
         <div className="max-w-screen-xl mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-3 font-display">
-            ВЫИГРАЙ МИЛЛИОН РУБЛЕЙ
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <Banknote className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+            <h1 className="text-3xl md:text-4xl font-bold text-secondary font-display">
+              ВЫИГРАЙ
+            </h1>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-3 font-display">
+            1.000.000 РУБЛЕЙ
+          </h2>
           <p className="text-muted-foreground text-lg">Играй, зарабатывай коины и участвуй в розыгрыше призов</p>
         </div>
       </div>
