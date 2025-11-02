@@ -1,12 +1,27 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <script>
-    // SPA fallback для GitHub Pages - сохраняем путь и переводим на корень SPA
-    sessionStorage.redirect = location.href;
-    location.replace('/phygital-arena-hub/');
-  </script>
-</head>
-<body></body>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фиджитал Игры | Phygital Games</title>
+    <meta name="description" content="Всероссийская Федерация Цифрового Спорта - будущее спорта уже здесь" />
+    <meta name="author" content="Games of the Future" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;900&family=Inter:wght@400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Games of the Future | Phygital Games" />
+    <meta property="og:description" content="Объединяем аудиторию фиджитал-спорта — разные дисциплины, разные форматы, одна экосистема" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
