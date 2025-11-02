@@ -63,7 +63,7 @@ const Achievements = () => {
           <h1 className="text-3xl font-bold text-foreground mb-2 font-display">
             Достижения
           </h1>
-          <p className="text-muted-foreground">Истории успеха нашего сообщества</p>
+          <p className="text-muted-foreground">Достижения страны. Каждый маленький шаг приближает нас к цели!</p>
         </div>
       </div>
 
