@@ -1,7 +1,7 @@
 import { BottomNav } from "@/components/BottomNav";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Trophy, Medal, Star, Award, Heart, Zap } from "lucide-react";
+import { Trophy, Medal, Star as StarIcon, Award, Heart, Zap } from "lucide-react";
 
 const achievements = [
   {
@@ -9,7 +9,7 @@ const achievements = [
     title: "Победа в конкурсе рисунков",
     author: "Маша, 7 лет",
     description: "Заняла первое место в городском конкурсе рисунков на тему 'Спорт будущего'",
-    icon: Star,
+    icon: StarIcon,
     color: "from-yellow-500/20 to-yellow-600/10"
   },
   {
@@ -61,9 +61,12 @@ const Achievements = () => {
       <div className="bg-gradient-to-b from-card to-background border-b border-border">
         <div className="max-w-screen-xl mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold text-foreground mb-2 font-display">
-            Достижения
+            ДОСТИЖЕНИЯ СТРАНЫ
           </h1>
-          <p className="text-muted-foreground">Достижения страны. Каждый маленький шаг приближает нас к цели!</p>
+          <div className="flex items-center gap-2">
+            <StarIcon className="w-5 h-5 text-secondary" />
+            <p className="text-muted-foreground">Каждый маленький шаг приближает нас к цели!</p>
+          </div>
         </div>
       </div>
 
