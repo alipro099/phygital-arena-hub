@@ -60,9 +60,12 @@ const Achievements = () => {
       {/* Header */}
       <div className="bg-gradient-to-b from-card to-background border-b border-border">
         <div className="max-w-screen-xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-foreground mb-2 font-display">
-            ДОСТИЖЕНИЯ СТРАНЫ
-          </h1>
+          <div className="flex items-center gap-2 mb-2">
+            <h1 className="text-3xl font-bold text-foreground font-display">
+              ДОСТИЖЕНИЯ СТРАНЫ
+            </h1>
+            <span className="text-3xl">🇷🇺</span>
+          </div>
           <div className="flex items-center gap-2">
             <StarIcon className="w-5 h-5 text-secondary" />
             <p className="text-muted-foreground">Каждый маленький шаг приближает нас к цели!</p>
@@ -71,6 +74,15 @@ const Achievements = () => {
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 py-6 space-y-4">
+        {/* Submit Achievement Button */}
+        <Button 
+          className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6 hover:shadow-[0_0_30px_hsl(195_100%_50%/0.6)] transition-all duration-300"
+          onClick={() => window.open('https://t.me/myfuturesport', '_blank')}
+        >
+          <Award className="w-5 h-5 mr-2" />
+          Отправить свое достижение
+        </Button>
+
         {/* Achievements List */}
         {achievements.map((achievement) => (
           <Card
@@ -98,15 +110,6 @@ const Achievements = () => {
             </div>
           </Card>
         ))}
-
-        {/* Submit Achievement Button */}
-        <Button 
-          className="w-full bg-gradient-to-r from-primary to-secondary text-background font-display font-bold text-lg py-6 hover:shadow-[0_0_30px_hsl(195_100%_50%/0.6)] transition-all duration-300 mt-6"
-          onClick={() => window.open('https://t.me/myfuturesport', '_blank')}
-        >
-          <Award className="w-5 h-5 mr-2" />
-          Отправить свое достижение
-        </Button>
       </div>
 
       <BottomNav />
